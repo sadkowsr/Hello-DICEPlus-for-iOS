@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <DicePlus/DicePlus.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <DPDiceManagerDelegate, DPDieDelegate> {
+    DPDiceManager* diceManager;
+    DPDie* dice;
+}
 
 @end

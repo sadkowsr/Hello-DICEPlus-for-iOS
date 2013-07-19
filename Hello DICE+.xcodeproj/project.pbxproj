@@ -19,6 +19,8 @@
 		E96E6A141799606300F275B1 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96E6A121799606300F275B1 /* MainStoryboard_iPhone.storyboard */; };
 		E96E6A171799606400F275B1 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E96E6A151799606300F275B1 /* MainStoryboard_iPad.storyboard */; };
 		E96E6A1A1799606400F275B1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E96E6A191799606400F275B1 /* ViewController.m */; };
+		E96E6A231799608300F275B1 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96E6A221799608300F275B1 /* CoreBluetooth.framework */; };
+		E96E6A251799616800F275B1 /* DicePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96E6A241799616800F275B1 /* DicePlus.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		E96E6A161799606400F275B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		E96E6A181799606400F275B1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E96E6A191799606400F275B1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E96E6A221799608300F275B1 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		E96E6A241799616800F275B1 /* DicePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DicePlus.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,9 +50,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E96E6A231799608300F275B1 /* CoreBluetooth.framework in Frameworks */,
 				E96E69FB1799606300F275B1 /* UIKit.framework in Frameworks */,
 				E96E69FD1799606300F275B1 /* Foundation.framework in Frameworks */,
 				E96E69FF1799606300F275B1 /* CoreGraphics.framework in Frameworks */,
+				E96E6A251799616800F275B1 /* DicePlus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +64,7 @@
 		E96E69EE1799606300F275B1 = {
 			isa = PBXGroup;
 			children = (
+				E96E6A221799608300F275B1 /* CoreBluetooth.framework */,
 				E96E6A001799606300F275B1 /* Hello DICE+ */,
 				E96E69F91799606300F275B1 /* Frameworks */,
 				E96E69F81799606300F275B1 /* Products */,
@@ -75,6 +82,7 @@
 		E96E69F91799606300F275B1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E96E6A241799616800F275B1 /* DicePlus.framework */,
 				E96E69FA1799606300F275B1 /* UIKit.framework */,
 				E96E69FC1799606300F275B1 /* Foundation.framework */,
 				E96E69FE1799606300F275B1 /* CoreGraphics.framework */,
@@ -240,6 +248,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-all_load";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -265,6 +274,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-all_load";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -274,6 +284,10 @@
 		E96E6A1E1799606400F275B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Hello DICE+/Hello DICE+-Prefix.pch";
 				INFOPLIST_FILE = "Hello DICE+/Hello DICE+-Info.plist";
@@ -285,6 +299,10 @@
 		E96E6A1F1799606400F275B1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Hello DICE+/Hello DICE+-Prefix.pch";
 				INFOPLIST_FILE = "Hello DICE+/Hello DICE+-Info.plist";
