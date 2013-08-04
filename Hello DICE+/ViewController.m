@@ -40,7 +40,12 @@
 }
 
 -(void)die:(DPDie *)die didRoll:(DPRoll *)roll error:(NSError *)error {
-    NSLog(@"Result: %i", roll.result);
+    NSLog(@"Good and bad rolls: %i", roll.result);
+    
+    // Checking for good rolls
+    if (roll.flags == DPRollFlagOK) {
+        NSLog(@"Good rolls: %i", roll.result);
+    }
 }
 
 - (void)didReceiveMemoryWarning
